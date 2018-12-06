@@ -26,6 +26,11 @@ public class Brain : MonoBehaviour {
 	void Start(){
 		StartCoroutine(ChunkRecovery());
 	}
+	void Update(){
+		if(Input.anyKeyDown){
+			Application.Quit();
+		}
+	}
 	Breakaway activePiece = null;
 	bool IsChunkReached(){
 		return Vector2.Distance(grabber.transform.position,activePiece.transform.position) <= MIN_DIST;
